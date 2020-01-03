@@ -12,15 +12,8 @@ services:
       - "/var/docker/telegraf/conf/telegraf.conf:/etc/telegraf/telegraf.conf:ro"
       - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
-      - telegrafnet
-      - influxdbnet
-      - mysqlnet
+      - online
 networks:
-  telegrafnet:
-    name: telegrafnet
-  influxdbnet:
+  online:
     external: true
-    name: influxdbnet
-  mysqlnet:
-    external: true
-    name: mysqlnet
+    name: online
